@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DwarfPlanetsController">
+   <children>
+      <RadioButton fx:id="ceresRadioButton" layoutX="30.0" layoutY="73.0" mnemonicParsing="false" onAction="#ceresRadioButtonListener" selected="true" text="Ceres">
+         <toggleGroup>
+            <ToggleGroup fx:id="dwarfPlanetsToggleGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="erisRadioButton" layoutX="30.0" layoutY="100.0" mnemonicParsing="false" onAction="#erisRadioButtonListener" text="Eris" toggleGroup="$dwarfPlanetsToggleGroup" />
+      <RadioButton fx:id="haumeaRadioButton" layoutX="30.0" layoutY="128.0" mnemonicParsing="false" onAction="#haumeaRadioButtonListener" text="Haumea" toggleGroup="$dwarfPlanetsToggleGroup" />
+      <RadioButton fx:id="makemakeRadioButton" layoutX="31.0" layoutY="157.0" mnemonicParsing="false" onAction="#makemakeRadioButtonListener" text="Makemake" toggleGroup="$dwarfPlanetsToggleGroup" />
+      <RadioButton fx:id="plutoRadioButton" layoutX="32.0" layoutY="185.0" mnemonicParsing="false" onAction="#plutoRadioButtonListener" text="Pluto" toggleGroup="$dwarfPlanetsToggleGroup" />
+      <ImageView fx:id="dwarfPlanetsImageView" fitHeight="200.0" fitWidth="200.0" layoutX="125.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Ceres.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="345.0" layoutY="86.0" prefHeight="17.0" prefWidth="82.0" text="Discovered By:" />
+      <Label layoutX="346.0" layoutY="118.0" text="Date of Discovery:" />
+      <Label fx:id="l" layoutX="347.0" layoutY="149.0" text="Orbit Period:" />
+      <Label layoutX="347.0" layoutY="179.0" text="Length of Day:" />
+      <Label layoutX="348.0" layoutY="211.0" text="Named After:" />
+      <Label fx:id="discoveredByLabel" layoutX="431.0" layoutY="86.0" text="Giuseppe Piazzi" />
+      <Label fx:id="dateOfDiscoveryLabel" layoutX="449.0" layoutY="118.0" text="January 1, 1801" />
+      <Label fx:id="orbitPeriodLabel" layoutX="424.0" layoutY="149.0" text="4.60 Earth years" />
+      <Label fx:id="lengthOfDayLabel" layoutX="429.0" layoutY="179.0" text="9.07 hours" />
+      <Label fx:id="namedAfterLabel" layoutX="423.0" layoutY="207.0" prefHeight="40.0" prefWidth="160.0" text="The Roman goddess of corn and harvests" wrapText="true" />
+   </children>
+</AnchorPane>

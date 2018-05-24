@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TextEditorController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu fx:id="file" mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem fx:id="newFileMenu" onAction="#newFileMenuListener" text="_New" />
+            <MenuItem fx:id="openFileMenu" onAction="#openFileMenu" text="_Open" />
+            <MenuItem fx:id="saveFileMenu" onAction="#saveFileMenu" text="_Save" />
+            <MenuItem fx:id="saveAsFileMenu" onAction="#saveFileAsMenu" text="Save _As…" />
+            <MenuItem fx:id="exitFileMenu" onAction="#exitProgram" text="E_xit" />
+          </items>
+               <accelerator>
+                  <KeyCodeCombination alt="DOWN" code="F" control="UP" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+        </Menu>
+        <Menu fx:id="textMenu" mnemonicParsing="false" text="Font">
+          <items>
+                  <MenuItem mnemonicParsing="false" text="Monospaced">
+                     <graphic>
+                        <RadioButton fx:id="chgTextMono" mnemonicParsing="false" onAction="#fontStyleListener">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="chgText" />
+                           </toggleGroup></RadioButton>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Serif">
+                     <graphic>
+                        <RadioButton fx:id="chgTextSerif" mnemonicParsing="false" onAction="#fontStyleListener" toggleGroup="$chgText" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="SansSerif">
+                     <graphic>
+                        <RadioButton fx:id="chgTextSansSerif" mnemonicParsing="false" onAction="#fontStyleListener" toggleGroup="$chgText" />
+                     </graphic>
+                  </MenuItem>
+            <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Italic">
+                     <graphic>
+                        <CheckBox fx:id="chgTextBold" mnemonicParsing="false" onAction="#fontStyleListener" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Bold">
+                     <graphic>
+                        <CheckBox fx:id="chgTextItalic" mnemonicParsing="false" onAction="#fontStyleListener" />
+                     </graphic>
+                  </MenuItem>
+          </items>
+               <accelerator>
+                  <KeyCodeCombination alt="DOWN" code="T" control="UP" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <TextArea fx:id="textArea" prefHeight="375.0" prefWidth="640.0" wrapText="true" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
